@@ -1,0 +1,234 @@
+---
+name: Fleet Telecom Executive
+colors:
+  surface: '#f8f9ff'
+  surface-dim: '#cbdbf5'
+  surface-bright: '#f8f9ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#eff4ff'
+  surface-container: '#e5eeff'
+  surface-container-high: '#dce9ff'
+  surface-container-highest: '#d3e4fe'
+  on-surface: '#0b1c30'
+  on-surface-variant: '#44474d'
+  inverse-surface: '#213145'
+  inverse-on-surface: '#eaf1ff'
+  outline: '#74777e'
+  outline-variant: '#c4c6ce'
+  surface-tint: '#4a5f7f'
+  primary: '#001229'
+  on-primary: '#ffffff'
+  primary-container: '#0f2744'
+  on-primary-container: '#798fb1'
+  inverse-primary: '#b2c8ed'
+  secondary: '#006398'
+  on-secondary: '#ffffff'
+  secondary-container: '#5bb8fe'
+  on-secondary-container: '#00476e'
+  tertiary: '#00151a'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#002b34'
+  on-tertiary-container: '#009bb5'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#d4e3ff'
+  primary-fixed-dim: '#b2c8ed'
+  on-primary-fixed: '#021c39'
+  on-primary-fixed-variant: '#324866'
+  secondary-fixed: '#cce5ff'
+  secondary-fixed-dim: '#93ccff'
+  on-secondary-fixed: '#001d31'
+  on-secondary-fixed-variant: '#004b73'
+  tertiary-fixed: '#acedff'
+  tertiary-fixed-dim: '#4cd7f6'
+  on-tertiary-fixed: '#001f26'
+  on-tertiary-fixed-variant: '#004e5c'
+  background: '#f8f9ff'
+  on-background: '#0b1c30'
+  surface-variant: '#d3e4fe'
+typography:
+  display:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 32px
+    fontWeight: '800'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 20px
+    fontWeight: '700'
+    lineHeight: 28px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 18px
+    fontWeight: '600'
+    lineHeight: 24px
+  title-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 22px
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  body-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 16px
+  label-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '600'
+    lineHeight: 18px
+  label-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 10px
+    fontWeight: '700'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+  metric-number:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: -0.02em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-sm: 0.75rem
+  gutter-lg: 1.5rem
+  margin: 1rem
+  margin-tablet: 1.5rem
+  margin-desktop: 2rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 0.75rem
+  space-lg: 1rem
+  space-xl: 1.5rem
+  space-2xl: 2rem
+---
+
+## Brand & Style
+
+The design system establishes a high-performance, executive telemetry atmosphere for enterprise fleet operations. Blending corporate discipline with connected-telecom vitality, the aesthetic balances the authority of deep naval corporate hues with energetic telemetry highlights. 
+
+The visual style is **Corporate Modern with High-Density Precision**:
+- **Tone & Mood:** Command-ready, proactive, clear, and reassuringly precise.
+- **Visual Tenets:** High contrast between deep corporate navies and vibrant telemetry accents; tactile, airy surfaces over crisp micro-borders; instant cognitive triage through semantic alert accents.
+- **Context of Use:** Primarily field managers, mobile dispatchers, and fleet executives requiring instant clarity under varying daylight environments on mobile viewports.
+
+## Colors
+
+The palette leverages a structured semantic hierarchy rooted in telecommunications and operational monitoring:
+
+- **Primary (`#0F2744`):** Deep Navy Telecom. Anchors navigation headers, executive metric summaries, primary headings, and high-emphasis controls.
+- **Secondary (`#0284C7`):** Vibrant Telecom Blue. Directs primary calls to action, active navigation tabs, interactive links, and ongoing tracking sessions.
+- **Tertiary (`#06B6D4`):** Telemetry & Connectivity Cyan. Serves as the real-time heartbeat tokenâ€”employed for live GPS pings, sync indicators (e.g., Chatwoot status), and dynamic data pulses.
+- **Neutral Palette:**
+  - Canvas / Background: `#F8FAFC` (Slate 50)
+  - Surface Substrate: `#F1F5F9` (Slate 100)
+  - Pure Surface Card: `#FFFFFF`
+  - Border Subdued: `#E2E8F0` (Slate 200)
+  - Secondary Text / Icons: `#64748B` (Slate 500)
+  - Body / Data Text: `#1E293B` (Slate 800)
+- **Operational & Status Semantics:**
+  - **Success / On-Schedule:** `#10B981` (Telemetry green for active vehicles, valid inspections).
+  - **Warning / Review Required:** `#F59E0B` (Amber for mileage thresholds, upcoming preventive maintenance).
+  - **Critical / Immediate Action:** `#EF4444` (Crimson for overdue tax/IPVA, telemetry loss, critical engine errors).
+
+## Typography
+
+Typography centers exclusively on **Plus Jakarta Sans**, capitalizing on its geometric clarity, tall x-height, and contemporary executive finish:
+
+- **Metrics & Numbers:** Financial and mileage values utilize `metric-number` with tabular numeric alignment (`font-variant-numeric: tabular-nums`) to prevent layout shifts during live data re-renders.
+- **Labels & Badges:** Upper-tier metadata badges rely on `label-sm` or `label-md` with slight positive tracking (`0.02em` to `0.04em`) to ensure legibility on low-contrast tinted backgrounds.
+- **Mobile Readability:** Display sizes are capped at 32px to ensure vehicle identifiers, license plates, and status ribbons fit comfortably on compact screens without breaking line heights.
+
+## Layout & Spacing
+
+The layout embraces a mobile-first, single-column fluid container with fixed bounds for tablet and desktop viewports:
+
+- **Grid Model:** Mobile leverages an edge-to-edge flexible layout within safe-area insets. Screen margins default to `1rem` (16px), allowing cards to maximize lateral scan area while maintaining visual breathability.
+- **Breakpoints:**
+  - Mobile: `< 640px` (fluid, single column, bottom sheet interactions, sticky bottom quick-action bar).
+  - Tablet: `640px â€“ 1024px` (2-column metric cards, split map/list view, 24px margins).
+  - Desktop: `L
+ÛÛœÝ˜Z[™YÛÛZ[™\ˆ\ÈLŽ][KXÛÛ[[ˆÜ\˜][Û˜[\Ú›Ø\™
+K‚‹H
+Š”š]H[\ÎŠŠˆ™\XØ[ÝXÚÚ[™È™[Y\ÈÛˆÜXÙK[Y
+Lœ
+H™]ÙY[ˆÙ\]Y[X[Ø\™È[™ÜXÙK^
+
+H™]ÙY[ˆÜ\˜][Û˜[ÙXÝ[ÛœÈ
+K™Ë‹›Y]Ý™\šY]ÈœËˆ[™[™È[\ÊK‚‚ˆÈÈ[]˜][Ûˆ	ˆ\‚•š\ÝX[Y\˜\˜ÚH™Z™XÝÈ\œÚÙ[™\šXÈ›Ü\ÚYÝÜÈ[ˆ˜]›ÜˆÙˆÜš\Ü›Ý[™\šY\ÈZ\™YÚ]ÛÛÛ][Y[XšY[ÛÝÜÎ‚‚‹H
+Š”Ý\™˜XÙHÞ\Ý[NŠŠ‚ˆH˜\ÙHØ[˜\ÎˆÑŽQØ‚ˆH]™[H
+Ý]XÈØ\™È	ˆ[™[ÊNˆÛÛYÑ‘‘‘‘‘˜[˜ÛÜÙYžHH\›Ü™\ˆÙˆÑL‘NŒ[™[ˆ[XšY[ÚYÝÎˆ\Ü™Ø˜JMKÎKŽŒ
+KLœ™Ø˜JMKÎKŽŒÊX‚ˆH]™[ˆ
+›Ø][™ÈXÝ[Ûˆ˜\œÈ	ˆ›ÜÝÛˆ[Ù[ÊNˆÑ‘‘‘‘‘˜XØÛÛ\[šYYžH™Ø˜JMKÎKŽŒ
+X[™ÝXH›Ü™\ˆÐÐ‘QLX‚ˆH]™[È
+Üš]XØ[[\Ø\ÝÈ	ˆ›ÝÛH˜]Ù\œÊNˆMœÍœ™Ø˜JMKÎKŽŒM
+X‚‹H
+Š•[[Y]žH^Y\š[™ÎŠŠˆÛÛ›™XÝY[[Y[È
+ÝXÚ\ÈÔÈ[™XØ]ÜœÈ[™Þ[˜È[Ù\ÊH[˜ÛÜœÜ˜]H[ˆXÝ]™H[Îˆ™Ø˜J‹N‹ŒL‹JXÝ™\ˆ\šÈ˜]žHÛÛ˜\œÈÜˆ™]]˜[Ø\™Ë‚‚ˆÈÈÚ\\Â‚•HÙ[ÛY]žH™Y›XÝÈ[Ù\›ˆ[™[ÛÙØ\™HÛÛ™[[ÛœÈÚ][ˆ[\\Ú\ÈÛˆ\™ÛÛ›ÛZXÈXÝ[H\™Ù]Î‚‚‹H
+Š”˜Y]\ÈÚÙ[œÎŠŠ‚ˆH˜\ÙH[\˜XÝ]™H[[Y[È
+[œ]Ë]ÛœÊNˆ›Ý[™Y[Ø
+ÈLœ
+K‚ˆHÛÜ™H›Y]Ø\™È	ˆÛÛZ[™\œÎˆ›Ý[™Y^
+Mœ
+HÜˆ›Ý[™YLž
+ŒÈ
+H›Üˆ[š\ÝX[\Ý[˜Ý[ÛˆYØZ[œÝH˜XÚÙÜ›Ý[™‚ˆH˜YÙ\ËÝ]\È[È	ˆ]™H˜XÚÙ\œÎˆÛÛ\][H›Ý[™Y
+[\Ú\YÈ[›Ý[™Y
+HÈÚYÛšYžHY]Y]H\Ý[˜Ýœ›ÛHÝXÝ\˜[Ø\™Ë‚‚ˆÈÈÛÛ\Û™[Â‚ˆÈÈÈ]ÛœÈ	ˆ[\˜XÝ]™HÛÛ›ÛÂ‹H
+Š”š[X\žHXÝ[ÛŽŠŠˆÛÛYÌŽÍØ
+ÜˆÌŒÍ›Üˆš[X\žHÝX›Z\ÜÚ[ÛŠKZYÚÛˆ[Øš[H›ÜˆÝXÚXØÙ\ÜÚXš[]K^Ý[YÚ]X™[[ØÚ]H]\š[™Ë›Ý[™YÈLœˆXÝ]™H™\ÜÈØØ[\ÈÝÛˆÛYÚH
+ØØ[JŽN
+X
+K‚‹H
+Š”ÙXÛÛ™\žHXÝ[ÛŽŠŠˆÝ][™YÚ]K\ÑL‘NŒÝ\™˜XÙH˜[œÜ\™[Üˆ\™HÑ‘‘‘‘‘˜^ÌŒÍ‚‹H
+Š‘\ÝXÝ]™HXÝ[ÛŽŠŠˆÛÛYÜˆÛÙ[ÙˆÑQ
+Ñ‘QL‘L˜˜XÚÙÜ›Ý[™Ú]ÐŽLPÌPØ^
+H›Üˆ[Y\™Ù[˜ÞHØÚÛÝ]ÜˆXZ[[˜[˜ÙH™YY›YÜË‚‚ˆÈÈÈ›Y]Ý]\È˜YÙ\È	ˆÚ\Â‹H
+Š]]›È
+XÝ]™JNŠŠˆÑPÑ‘X˜XÚÙÜ›Ý[™ÌÎMØ^Ú]Hœ[Ø][™ÈÝ[ˆÌLŽNX‚‹H
+Š‘[HX[][°éðèÛÈ
+[ˆÙ\šXÙJNŠŠˆÑ‘‘‘P˜˜XÚÙÜ›Ý[™ÐLÌX^[X™\ˆØ\›š[™ÈXÛÛ‹‚‹H
+Š[\HÔÎŠŠˆÑQ‘‘‘˜˜XÚÙÜ›Ý[™ÌÍŽPLX^\X\žHÌ‘[[Y]žH[™ÈX\šÙ\‹‚‹H
+ŠÚ]ÛÛÝÚ[˜Ü›Ûš^˜YÎŠŠˆÑŒ‘X˜XÚÙÜ›Ý[™ÌÍ‘X^™X]\š[™ÈH\ØÜ™]HÛÛ›™XÝYÛÛ[][šXØ][ÛˆÛ\‚‚ˆÈÈÈY]šXÈ	ˆ[[Y]žH›ÙÜ™\ÜÈ˜\œÂ‹H
+Š’ÓHÈ™]šY]ÈØ]YÙNŠŠˆ˜XÚÈZYÚÙˆ˜XÚÙÜ›Ý[™ÑL‘NŒ›Ý[™YY[‚‹H
+Š”›ÙÜ™\ÜÈš[ŠŠˆ[˜[ZXÈš[˜\ÙYÛˆÙX\‹Ü\˜Ù[YÙN‚ˆHÌ	XˆÌLŽNX
+Ü™Y[ˆH›Ü›X[
+BˆHÌ	HHL	XˆÑNQL˜
+[X™\ˆH™]™[]™H[\
+BˆHˆL	XÜˆ^\™YˆÑQ
+Üš[\ÛÛˆH\™Ù[[\™[[ÛŠB‚ˆÈÈÈ™ZXÛH	ˆ[[Y]žHØ\™Â‹HÝXÝ\™YÚ]YÚÛÛ˜\ÝˆÜXY\ˆ[˜ÛY\È™ZXÛH[Ù[›ÛXÙ[œÙH]HÛÛZ[™\ˆ
+ÑŒQQŽX›Ý[™Y[YÚ][Û›Ë[ZÙHÛ\š]JK[™HÝ]\È˜YÙK‚‹H[›™\ˆÜšYÚÝÜÈš]™\ˆ˜[YKÙÛY]\ˆ˜[YK[™™X[][YHÛÛ›™XÝ]š]HÝ]\Ë‚‹H›ÝÛHØ\™XÝ[ÛœÈÜÝÛ™K]\\™XÝØ[Îˆ”›ÝHÔÈ‹‘šXÚHYXðè›šXØH‹ÜˆÚ]ÛÛÝY[œØYÙ[H‹‚‚ˆÈÈÈ›Ü›H[œ]È	ˆÙX\˜Úš[\œÂ‹HZ[ˆZYÚ˜XÚÙÜ›Ý[™Ñ‘‘‘‘‘˜›Ü™\ˆK\ÐÐ‘QLXˆÛˆ›ØÝ\Îˆ›Ü™\ˆÚYÈÈÌŽÍØÚ]Hš[™ÈÙˆÜ™Ø˜J‹LÌ‹NNKŒMJX

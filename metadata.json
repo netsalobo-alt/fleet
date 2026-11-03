@@ -1,0 +1,6 @@
+{
+  "name": "Fleet Telecom & Gestão de Frota PA",
+  "description": "Sistema integrado de gestão de frota com IA para lançamento de serviços e revisões, controle de IPVA e licenciamento do Pará (DETRAN-PA), integração Chatwoot e telemetria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

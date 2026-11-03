@@ -1,0 +1,143 @@
+version: '3.8'
+
+# ==============================================================================
+# FLEET TELECOM - DOCKER SWARM STACK (PORTAINER)
+# Imagem Local: fleet-app:1.0.0 (Construída localmente no nó Manager)
+# Domínio: fleet.nortetelecom.net.br
+# Roteador / TLS: Traefik existente (Rede externa: Mosqueironet)
+# Banco de Dados Dedicado: PostgreSQL 17 (Rede privada: fleet_internal)
+# Volume Persistente: fleet_postgres_data
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # 1. fleet_app: Aplicação Fullstack (React/Vite SPA + Backend Express)
+  # ----------------------------------------------------------------------------
+  fleet_app:
+    image: fleet-app:1.0.0
+    networks:
+      - Mosqueironet
+      - fleet_internal
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      TZ: America/Belem
+      # Conexão com o PostgreSQL interno (sem exposição externa)
+      DB_HOST: fleet_db
+      DB_PORT: 5432
+      DB_NAME: fleet_db
+      DB_USER: fleet_user
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      # Segredos de IA lidos de forma segura no backend
+      GEMINI_API_KEY_FILE: /run/secrets/gemini_api_key
+    secrets:
+      - db_password
+      - gemini_api_key
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+        window: 120s
+      # Fixa a execução no nó Manager onde a imagem local foi construída
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+      resources:
+        limits:
+          cpus: '1.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+      labels:
+        # Integração com o Traefik existente na rede Mosqueironet
+        - "traefik.enable=true"
+        - "traefik.docker.network=Mosqueironet"
+        - "traefik.http.routers.fleet-app.rule=Host(`fleet.nortetelecom.net.br`)"
+        - "traefik.http.routers.fleet-app.entrypoints=websecure"
+        - "traefik.http.routers.fleet-app.tls=true"
+        - "traefik.http.routers.fleet-app.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.fleet-app.loadbalancer.server.port=3000"
+
+  # ----------------------------------------------------------------------------
+  # 2. fleet_db: PostgreSQL 17 Dedicado (Isolado na rede privada fleet_internal)
+  # ----------------------------------------------------------------------------
+  fleet_db:
+    image: postgres:17-alpine
+    networks:
+      - fleet_internal
+    environment:
+      POSTGRES_DB: fleet_db
+      POSTGRES_USER: fleet_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+      TZ: America/Belem
+    secrets:
+      - db_password
+    volumes:
+      - fleet_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fleet_user -d fleet_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 10
+      # Fixa o banco no nó com o volume persistente para segurança dos dados
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: '2.00'
+          memory: 2048M
+        reservations:
+          cpus: '0.50'
+          memory: 512M
+
+# ------------------------------------------------------------------------------
+# Volumes Persistentes (Preserva dados durante atualizações e recriações)
+# ------------------------------------------------------------------------------
+volumes:
+  fleet_postgres_data:
+    driver: local
+
+# ------------------------------------------------------------------------------
+# Redes: Rede Externa Mosqueironet + Rede Privada Overlay
+# ------------------------------------------------------------------------------
+networks:
+  # Rede externa pré-existente no Swarm utilizada pelo Traefik
+  Mosqueironet:
+    external: true
+
+  # Rede overlay isolada exclusiva para fleet_app e fleet_db
+  fleet_internal:
+    driver: overlay
+    attachable: false
+
+# ------------------------------------------------------------------------------
+# Docker Secrets (Segurança de Credenciais)
+# ------------------------------------------------------------------------------
+secrets:
+  db_password:
+    external: true
+  gemini_api_key:
+    external: true
